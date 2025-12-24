@@ -1,0 +1,285 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --colorTextPrimary: #979dac;
+  --colorTextSecundary: #e2eafc;
+  --colorBackGroundPrimary: #000814;
+  --colorBackGroundSecundary: #097588;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--colorBackGroundPrimary);
+}
+
+.inicial {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+h1,
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  color: var(--colorTextPrimary);
+  margin: 20px 0;
+}
+
+h3 {
+  color: var(--colorTextSecundary);
+  margin: 20px 0;
+  font-family: "DM Sans";
+}
+
+p {
+  font-family: "DM Sans";
+  margin: 10px 0;
+  color: var(--colorTextSecundary);
+}
+
+i {
+  color: var(--colorTextSecundary);
+}
+
+h1.h1 {
+  font-size: 2.1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  border-right: 2px solid white;
+  animation: blink 0.7s steps(1) infinite normal, typing 4s steps(40) normal;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 22ch;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: white;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* principal */
+.principal {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-rows: auto;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+.navegacao {
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--colorBackGroundSecundary);
+  height: 60px;
+}
+
+.navegacao > a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 15px;
+}
+
+.navegacao > a:hover {
+  text-decoration: underline;
+}
+
+.cabecalho {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  margin: 20px 5px;
+  padding: 8px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.cabecalho span {
+  color: #3c096c;
+  font: 800 1.6rem "Ubuntu";
+}
+
+.conteudo {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  gap: 100px;
+}
+
+.conteudo article {
+  margin: 100px 0;
+}
+
+.conteudo > #projetos > .projetos-content {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.projeto-box {
+  height: 225px;
+  width: 450px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  border-left: 5px solid var(--colorBackGroundSecundary);
+  border-radius: 8px 0 0 8px;
+}
+
+.projeto-box:hover {
+  transform: scale(1.1);
+}
+
+.projeto-box > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.projeto-box img {
+  filter: blur(2px) brightness(0.6);
+  cursor: pointer;
+}
+.projeto-box:hover img {
+  filter: blur(0px) brightness(0.8);
+}
+
+.projeto-box .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+.projeto-box .overlay h3 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: opacity 0.4s ease;
+  margin: auto 0;
+  font-weight: 500;
+}
+
+.projeto-box .overlay button {
+  background-color: var(--colorBackGroundSecundary);
+  color: var(--colorTextSecundary);
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  align-self: center;
+  margin: 0 12px;
+  font-weight: 700;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0 0 20px 0;
+}
+
+/* Mostrar overlay no hover */
+.projeto-box:hover .overlay button {
+  opacity: 1;
+}
+.projeto-box:hover .overlay h3 {
+  opacity: 0;
+}
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icon-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  border: 2px solid var(--colorBackGroundSecundary);
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 8px 8px 0 0;
+  transition: box-shadow .2s ease;
+}
+
+.icon:hover {
+  box-shadow: 1px 1px 8px var(--colorBackGroundSecundary);
+}
+.icon > p {
+  font: 500 20px "DM Sans";
+}
+
+.icon > img {
+  width: 50px;
+  height: 50px;
+}
+
+.rodape {
+  grid-row: 4/5;
+  grid-column: 1/4;
+  background-color: var(--colorBackGroundSecundary);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-contatos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.rodape h2 {
+  text-align: center;
+  color: var(--colorTextSecundary);
+}
+
+i {
+  font-size: 2.1em;
+  background-color: var(--colorBackGroundPrimary);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+}
