@@ -9,22 +9,60 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="inicial" style="display: none">
-      <h1 class="h1">Davi Augusto, Portfólio.</h1>
-    </div>
     <div class="principal">
       <nav class="navegacao">
+        <h1 id="title">
+          <i class="fas fa-code logo-icon"></i>
+          Davi Augusto
+        </h1>
+        <div id="abas">
+          <a href="#sobre-min">Sobre mim</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#skills">Skills</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <i onclick="mudarTema()" class="bi bi-sun-fill changeTema"></i>
+        <i class="bi bi-list menu-hamburguer" onclick="aparecerAbas()"></i>
+      </nav>
+      <div id="abas2">
         <a href="#sobre-min">Sobre mim</a>
         <a href="#projetos">Projetos</a>
         <a href="#skills">Skills</a>
         <a href="#contato">Contato</a>
-      </nav>
+        <i onclick="mudarTema()" class="bi bi-sun-fill  changeTema"></i>
+      </div>
       <header class="cabecalho">
-        <h1>Davi Augusto</h1>
-        <span>Programador Front-End</span>
-        <div id="sobre-mim">
+        <div class="header1">
+          <span id="subTitle"
+            >Desenvolvedor Front-End <br />
+            web & mobile</span
+          >
+          <div class="profile-box">
+            <img src="/img/dexter-foto.jpg" alt="" />
+          </div>
+        </div>
+        <div class="header2">
+          <p>
+            Transformo ideias em experiências digitais incríveis, com foco em
+            <br />
+            design responsivo, performance e acessibilidade. Apaixonado por
+            criar <br />
+            interfaces que encantam e funcionam perfeitamente. <br />
+          </p>
+        </div>
+      </header>
+      <main class="conteudo">
+        <article id="sobre-mim">
           <h2>Sobre mim</h2>
           <p>
             Iniciei minha jornada na programação em 2023 através de um curso
@@ -45,31 +83,58 @@
             superior em 2026 para continuar minha formação acadêmica e
             profissional na área de tecnologia.
           </p>
-        </div>
-      </header>
-      <main class="conteudo">
+        </article>
         <article id="projetos">
           <h2>Projetos</h2>
           <div class="projetos-content">
             <div class="projeto-box">
-              <img src="/img/calculadora.png" alt="" />
+              <img
+                src="/img/calculadora.png"
+                alt="Interface de uma calculadora funcional"
+              />
               <div class="overlay">
-                <h3>Calculadora</h3>
-                <a><button>acessar</button></a>
+                <h3>Calculadora Inteligente</h3>
+                <p>
+                  Mais do que somar e subtrair! Esta calculadora realiza
+                  operações complexas, tem memória e um design limpo que torna
+                  qualquer cálculo uma experiência fluida. Perfeita para o dia a
+                  dia ou para estudos.
+                </p>
+                <a href=""><button class="btn-acess">Acessar</button></a>
               </div>
             </div>
+
             <div class="projeto-box">
-              <img src="/img/quiz-math.png" alt="" />
+              <img
+                src="/img/quiz-math.png"
+                alt="Tela de um quiz de matemática com perguntas"
+              />
               <div class="overlay">
-                <h3>Quiz de Matematica</h3>
-                <a><button>acessar</button></a>
+                <h3>Quiz de Matemática</h3>
+                <p>
+                  Consegue desafiar sua lógica? Este quiz interativo testa seus
+                  conhecimentos com perguntas envolventes que vão do básico ao
+                  desafiador. Uma forma divertida e viciante de treinar o
+                  cérebro e aprender brincando.
+                </p>
+                <a href=""><button class="btn-acess">Acessar</button></a>
               </div>
             </div>
+
             <div class="projeto-box">
-              <img src="/img/mario.png" alt="" />
+              <img
+                src="/img/mario.png"
+                alt="Personagem Mario em um projeto interativo"
+              />
               <div class="overlay">
-                <h3>Mario</h3>
-                <a><button>acessar</button></a>
+                <h3>Aventura do Mario</h3>
+                <p>
+                  Reviva a nostalgia com um toque moderno! Este projeto captura
+                  a magia do encanador mais famoso do mundo em uma experiência
+                  interativa. Clique e veja a surpresa que preparei — é pura
+                  diversão!
+                </p>
+                <a href=""><button class="btn-acess">Acessar</button></a>
               </div>
             </div>
           </div>
@@ -101,20 +166,27 @@
               <p>SQL</p>
               <img src="/img/mysql.png" alt="" />
             </div>
+            <div class="icon">
+              <p>Node Js</p>
+              <img src="/img/node_js-logo.png" alt="" />
+            </div>
+            <div class="icon">
+              <p>Git</p>
+              <img src="/img/git-logo.png" alt="" />
+            </div>
           </div>
         </article>
       </main>
       <footer class="rodape" id="contato">
         <h2>Entre em contato</h2>
         <div class="icon-contatos">
-          <div class="icon-content"><i class="bi bi-whatsapp"></i></div>
           <div class="icon-content"><i class="bi bi-youtube"></i></div>
           <div class="icon-content"><i class="bi bi-instagram"></i></div>
           <div class="icon-content"><i class="bi bi-linkedin"></i></div>
-          <div class="icon-content"><i class="bi bi-envelope"></i></div>
+          <div class="icon-content"><i class="bi bi-github"></i></div>
         </div>
       </footer>
     </div>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
   </body>
 </html>

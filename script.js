@@ -1,14 +1,36 @@
-window.onload = function() {
-    const inicialDiv = document.querySelector('.inicial');
-    const principalDiv = document.querySelector('.principal');
-    principalDiv.style.display = 'none';
-    this.setTimeout(function() {
-        inicialDiv.style.opacity = '0';
-        inicialDiv.style.transition = 'opacity 0.5s ease-out';
-        setTimeout(function() {
-            inicialDiv.style.display = 'none';
-            principalDiv.style.display = 'block';
-            principalDiv.style.transition = 'opacity 0.5s ease-in';
-        }, 1000);
-    }, 5000);
+let icon = document.querySelector(".changeTema");
+let menuIcon = document.querySelector(".menu-hamburguer");
+let abas = document.querySelector("#abas");
+let abas2 = document.querySelector("#abas2");
+let tema = "dark";
+const root = document.documentElement;
+abas2.style.display = "none";
+menuIcon.style.display = "none";
+window.onload = function () {
+  let widthScreen = window.innerWidth;
+  if (widthScreen <= 768) {
+    abas.style.display = "none";
+  }
+};
+
+function mudarTema() {
+  if (tema == "dark") {
+    root.style.setProperty("--colorBackGroundPrimary", "#e9e9e9ff");
+    root.style.setProperty("--colorTextSecundary", "#000814");
+    icon.classList.replace("bi-sun-fill", "bi-moon-fill");
+    tema = "light";
+  } else {
+    root.style.setProperty("--colorBackGroundPrimary", "#000814");
+    root.style.setProperty("--colorTextSecundary", "#e2eafc");
+    icon.classList.replace("bi-moon-fill", "bi-sun-fill");
+    tema = "dark";
+  }
+}
+
+function aparecerAbas() {
+  if (abas2.style.display == "none") {
+    abas2.style.display = "flex";
+  } else {
+    abas2.style.display = "none";
+  }
 }
