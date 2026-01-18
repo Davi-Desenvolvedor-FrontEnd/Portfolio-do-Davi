@@ -1,17 +1,10 @@
 let icon = document.querySelector(".changeTema");
 let menuIcon = document.querySelector(".menu-hamburguer");
 let abas = document.querySelector("#abas");
-let abas2 = document.querySelector("#abas2");
 let tema = "dark";
+
 const root = document.documentElement;
-abas2.style.display = "none";
 menuIcon.style.display = "none";
-window.onload = function () {
-  let widthScreen = window.innerWidth;
-  if (widthScreen <= 768) {
-    abas.style.display = "none";
-  }
-};
 
 function mudarTema() {
   if (tema == "dark") {
